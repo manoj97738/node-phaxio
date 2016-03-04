@@ -10,13 +10,13 @@ Send faxes with [Phaxio](http://www.phaxio.com). It's completely asynchronous.
 
 ```javascript
 var Phaxio = require('phaxio'),
-  phaxio = new Phaxio('e222........................', '62e5........................'),
+  phaxio = new Phaxio('api_key', 'api_secret'),
   callback = function(err,data){console.log(data);};
 
 phaxio.sendFax({
 	to: '13165555555',
-  string_data: 'Faxing from Node.js',
-  string_data_type: 'text'
+  	string_data: 'Faxing from Node.js',
+  	string_data_type: 'text'
 },callback);
 ```
 Response
@@ -48,12 +48,12 @@ Returns a phaxio object with your keys set on the object.
 ### phaxio.sendFax(options, callback);
 
 ```javascript
-opt = {
+opt : {
   // always required can be an array of a single string
-  to = ['xxxxxxxx', 'xxxxxxxxx'],
+  to : ['xxxxxxxx', 'xxxxxxxxx'],
   // one of these is required
-  filenames = ['path','path','path'],
-  string_data = 'String of data for phaxio to parse'
+  filenames : ['path','path','path'],
+  string_data :'String of data for phaxio to parse'
   //optional
   string_data_type: '',
   batch: "and othe phaxio options"
